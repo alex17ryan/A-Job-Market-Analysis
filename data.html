@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Job Market Analysis - Algeria</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="assets/favicon.png" type="image/x-icon" />
+  </head>
+  <body>
+    <button id="theme-toggle" class="theme-toggle-button">
+      <span class="icon">☀️</span>
+      <span>Light Mode</span>
+    </button>
+
+    <div class="container">
+      <header class="text-center py-16 animate-slide-up">
+        <h1 class="text-7xl md:text-8xl font-black gradient-title mb-6 tracking-tight">Job Market Analysis</h1>
+        <div class="space-y-3">
+          <p class="text-xl" style="font-family: 'JetBrains Mono', monospace; color: var(--color-text-secondary); font-weight: 400">
+            A view of the latest trends in tech job offers in Algeria • May 2025
+          </p>
+          <i style="font-family: 'JetBrains Mono', monospace; color: var(--color-text-secondary)">{ Numbers are calculated by words occurrence }</i>
+        </div>
+      </header>
+
+      <section class="mb-12 animate-fade-scale" style="animation-delay: 0.2s">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="metric-card">
+            <div
+              class="metric-icon"
+              style="background: linear-gradient(to bottom right, rgba(var(--color-accent-light-rgb), 0.2), rgba(var(--color-blue-green-shade-rgb), 0.3)); color: var(--color-accent-light)"
+            >
+              🔥
+            </div>
+            <div class="metric-value">39%</div>
+            <div class="metric-label">JavaScript Demand</div>
+          </div>
+          <div class="metric-card">
+            <div
+              class="metric-icon"
+              style="background: linear-gradient(to bottom right, rgba(var(--color-blue-green-shade-rgb), 0.2), rgba(var(--color-accent-dark-rgb), 0.3)); color: var(--color-blue-green-shade)"
+            >
+              🏢
+            </div>
+            <div class="metric-value">57%</div>
+            <div class="metric-label">On-Site Roles</div>
+          </div>
+          <div class="metric-card">
+            <div
+              class="metric-icon"
+              style="background: linear-gradient(to bottom right, rgba(var(--color-accent-dark-rgb), 0.2), rgba(var(--color-accent-light-rgb), 0.3)); color: var(--color-accent-dark)"
+            >
+              ⚛️
+            </div>
+            <div class="metric-value">30%</div>
+            <div class="metric-label">React Dominance</div>
+          </div>
+          <div class="metric-card">
+            <div
+              class="metric-icon"
+              style="background: linear-gradient(to bottom right, rgba(var(--color-accent-light-rgb), 0.2), rgba(var(--color-blue-green-shade-rgb), 0.3)); color: var(--color-accent-light)"
+            >
+              📊
+            </div>
+            <div class="metric-value">100+</div>
+            <div class="metric-label">Jobs Analyzed</div>
+          </div>
+        </div>
+      </section>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 space-y-8 lg:space-y-0">
+        <div class="panel p-8 animate-slide-up" style="animation-delay: 0.3s">
+          <h2 class="section-header">Workspace Types</h2>
+          <div class="chart-container">
+            <canvas id="workspaceChart"></canvas>
+          </div>
+          <div class="text-center mt-6 space-y-2">
+            <div class="flex justify-center gap-6 text-sm">
+              <span style="color: var(--color-accent-dark)">■ On-Site 57%</span>
+              <span style="color: var(--color-accent-light)">■ Remote 24%</span>
+              <span style="color: var(--color-blue-green-shade)">■ Hybrid 19%</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel p-8 animate-slide-up" style="animation-delay: 0.4s">
+          <h2 class="section-header">Programming Languages</h2>
+          <div class="chart-container">
+            <canvas id="languagesChart"></canvas>
+          </div>
+        </div>
+
+        <div class="panel p-8 animate-slide-up" style="animation-delay: 0.5s">
+          <h2 class="section-header">Front-End Frameworks</h2>
+          <div class="chart-container">
+            <canvas id="frontendChart"></canvas>
+          </div>
+        </div>
+
+        <div class="panel p-8 animate-slide-up" style="animation-delay: 0.6s">
+          <h2 class="section-header">Back-End Frameworks</h2>
+          <div class="chart-container">
+            <canvas id="backendChart"></canvas>
+          </div>
+        </div>
+
+        <div class="panel p-8 animate-slide-up" style="animation-delay: 0.7s">
+          <h2 class="section-header">Database Systems</h2>
+          <div class="chart-container">
+            <canvas id="databaseChart"></canvas>
+          </div>
+        </div>
+
+        <div class="panel p-8 animate-slide-up" style="animation-delay: 0.8s">
+          <h2 class="section-header">Styling & CMS</h2>
+          <div class="chart-container">
+            <canvas id="stylingChart"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <section class="panel p-8 mt-8 animate-slide-up" style="animation-delay: 0.9s">
+        <h2 class="section-header">DevOps & Cloud Technologies</h2>
+        <div class="devops-grid">
+          <div class="devops-card">
+            <div
+              class="devops-icon"
+              style="background: linear-gradient(to bottom right, rgba(var(--color-accent-light-rgb), 0.2), rgba(var(--color-blue-green-shade-rgb), 0.3)); color: var(--color-accent-light)"
+            >
+              🐳
+            </div>
+            <div class="text-xl font-bold" style="color: var(--color-text-primary)">Docker</div>
+            <div class="text-sm" style="color: var(--color-text-secondary)">15%</div>
+          </div>
+          <div class="devops-card">
+            <div
+              class="devops-icon"
+              style="background: linear-gradient(to bottom right, rgba(var(--color-blue-green-shade-rgb), 0.2), rgba(var(--color-accent-dark-rgb), 0.3)); color: var(--color-blue-green-shade)"
+            >
+              ⚙️
+            </div>
+            <div class="text-xl font-bold" style="color: var(--color-text-primary)">Odoo</div>
+            <div class="text-sm" style="color: var(--color-text-secondary)">10%</div>
+          </div>
+          <div class="devops-card">
+            <div
+              class="devops-icon"
+              style="background: linear-gradient(to bottom right, rgba(var(--color-accent-dark-rgb), 0.2), rgba(var(--color-bg-tertiary-rgb), 0.3)); color: var(--color-accent-dark)"
+            >
+              ☁️
+            </div>
+            <div class="text-xl font-bold" style="color: var(--color-text-primary)">AWS</div>
+            <div class="text-sm" style="color: var(--color-text-secondary)">9%</div>
+          </div>
+          <div class="devops-card">
+            <div
+              class="devops-icon"
+              style="background: linear-gradient(to bottom right, rgba(var(--color-accent-light-rgb), 0.2), rgba(var(--color-blue-green-shade-rgb), 0.3)); color: var(--color-accent-light)"
+            >
+              ⚡
+            </div>
+            <div class="text-xl font-bold" style="color: var(--color-text-primary)">Azure</div>
+            <div class="text-sm" style="color: var(--color-text-secondary)">7%</div>
+          </div>
+          <div class="devops-card">
+            <div
+              class="devops-icon"
+              style="background: linear-gradient(to bottom right, rgba(var(--color-blue-green-shade-rgb), 0.2), rgba(var(--color-accent-dark-rgb), 0.3)); color: var(--color-blue-green-shade)"
+            >
+              🚢
+            </div>
+            <div class="text-xl font-bold" style="color: var(--color-text-primary)">Kubernetes</div>
+            <div class="text-sm" style="color: var(--color-text-secondary)">4%</div>
+          </div>
+          <div class="devops-card">
+            <div
+              class="devops-icon"
+              style="background: linear-gradient(to bottom right, rgba(var(--color-accent-dark-rgb), 0.2), rgba(var(--color-bg-tertiary-rgb), 0.3)); color: var(--color-accent-dark)"
+            >
+              👷
+            </div>
+            <div class="text-xl font-bold" style="color: var(--color-text-primary)">Jenkins</div>
+            <div class="text-sm" style="color: var(--color-text-secondary)">3%</div>
+          </div>
+          <div class="devops-card">
+            <div
+              class="devops-icon"
+              style="background: linear-gradient(to bottom right, rgba(var(--color-bg-tertiary-rgb), 0.2), rgba(var(--color-accent-light-rgb), 0.3)); color: var(--color-bg-tertiary)"
+            >
+              🏗️
+            </div>
+            <div class="text-xl font-bold" style="color: var(--color-text-primary)">Terraform</div>
+            <div class="text-sm" style="color: var(--color-text-secondary)">3%</div>
+          </div>
+          <div class="devops-card">
+            <div
+              class="devops-icon"
+              style="background: linear-gradient(to bottom right, rgba(var(--color-accent-light-rgb), 0.2), rgba(var(--color-blue-green-shade-rgb), 0.3)); color: var(--color-accent-light)"
+            >
+              🔗
+            </div>
+            <div class="text-xl font-bold" style="color: var(--color-text-primary)">Kafka</div>
+            <div class="text-sm" style="color: var(--color-text-secondary)">2%</div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <footer class="footer">
+      <div class="container text-center">
+        <p style="font-family: 'JetBrains Mono', monospace; color: var(--color-text-secondary)">
+          ©<span id="currentYear">2025</span> Created with 🤍 by <span class="footer-attribution">@alexryan</span>
+        </p>
+        <p style="font-family: 'JetBrains Mono', monospace; color: var(--color-text-secondary)">Actually that's 🧢 it was fully generated by our AI agent! I did nothing ;)</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
