@@ -32,14 +32,6 @@ I analyzed over 100 job posts from May 2025, all aimed at Algerian developers. T
 
 # Fun Fax
 
-This webpage was built with a **Single AI Prompt** using an AI agent/system developed and designed by a friend.
-
-- **Time spent:** 6 mins (probably more)
-
-- **Money wasted:** $0.13
-
-- **Efforts made:** Typed one prompt
-
-**Final result:** [Job Market Analysis - Algeria](https://alex17ryan.github.io/A-Job-Market-Analysis/)
+This webpage was entirely **Vibe Coded**
 
 Hell, even this README is AI generated 🥸
